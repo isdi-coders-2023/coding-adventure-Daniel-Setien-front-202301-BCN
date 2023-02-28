@@ -1,3 +1,5 @@
+import Button from "../Button/Button";
+
 const RegisterForm = (): JSX.Element => {
   return (
     <form
@@ -14,19 +16,7 @@ const RegisterForm = (): JSX.Element => {
         type="email"
         name="email"
         id="email"
-        required
-      ></input>
-
-      <label className="form__label" htmlFor="username">
-        Username
-      </label>
-      <input
-        className="form__input"
-        type="text"
-        minLength={6}
-        maxLength={24}
-        name="username"
-        id="username"
+        placeholder="Introduce your email"
         required
       ></input>
 
@@ -40,6 +30,7 @@ const RegisterForm = (): JSX.Element => {
         maxLength={32}
         name="password"
         id="password"
+        placeholder="Introduce your password"
         required
       ></input>
 
@@ -51,8 +42,11 @@ const RegisterForm = (): JSX.Element => {
         accept="image/*"
         type="file"
         name="image"
+        placeholder="Introduce an image for your profile"
         id="image"
       ></input>
+
+      <Button text="Sign up" />
     </form>
   );
 };
