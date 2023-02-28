@@ -8,11 +8,11 @@ const RegisterForm = (): JSX.Element => {
       autoComplete="off"
       encType="multipart/form"
     >
-      <label className="form__label" htmlFor="email">
+      <label className="form__text" htmlFor="email">
         Email
       </label>
       <input
-        className="form__input"
+        className="form__field"
         type="email"
         name="email"
         id="email"
@@ -20,11 +20,11 @@ const RegisterForm = (): JSX.Element => {
         required
       ></input>
 
-      <label className="form__label" htmlFor="password">
+      <label className="form__text" htmlFor="password">
         Password
       </label>
       <input
-        className="form__input"
+        className="form__field"
         type="password"
         minLength={8}
         maxLength={32}
@@ -34,11 +34,11 @@ const RegisterForm = (): JSX.Element => {
         required
       ></input>
 
-      <label className="form__label" htmlFor="image">
+      <label className="form__text" htmlFor="image">
         image
       </label>
       <input
-        className="form__input"
+        className="form__field"
         accept="image/*"
         type="file"
         name="image"
