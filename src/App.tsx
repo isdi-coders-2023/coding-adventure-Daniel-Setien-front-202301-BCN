@@ -1,5 +1,5 @@
 const App = (): JSX.Element => {
-  return <p>Hello Developers!</p>;
+  return <></>;
 };
 
 export default App;
