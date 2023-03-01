@@ -3,6 +3,7 @@
 body {
   margin: 0;
   box-sizing: border-box;
+  background-color: var(--color-background);
 }
 
 ul,
@@ -20,7 +21,27 @@ a {
   text-decoration: none;
 }
 
+input {
+  border: none;
+}
+
 :root {
-  --primary-color: #cccf18;
-  --primary-color-disabled: #cccf1857;
+  --color-primary: #cccf18;
+  --color-disabled-primary: #cccf1857;
+  --color-background: #1e1e1e;
+
+  --font-primary: "Saira Stencil One";
+
+  --font-color-primary: #fff;
+  --font-color-secondary: var(--color-primary);
+  --field-color-primary: #fff;
+}
+
+#root {
+  margin: 25px;
+}
+
+html {
+  font-family: Roboto, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }

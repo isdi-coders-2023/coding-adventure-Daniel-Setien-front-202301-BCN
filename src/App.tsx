@@ -1,5 +1,11 @@
+import RegisterForm from "./components/RegisterForm/RegisterForm";
+
 const App = (): JSX.Element => {
-  return <></>;
+  return (
+    <>
+      <RegisterForm />
+    </>
+  );
 };
 
 export default App;
