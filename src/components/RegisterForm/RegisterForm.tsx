@@ -5,7 +5,7 @@ import RegisterFormStyled from "./RegisterFormStyled";
 const RegisterForm = (): JSX.Element => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [, setImage] = useState<File>();
+  const [image, setImage] = useState<File>();
 
   const handleEmailChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(event.target.value);
@@ -45,7 +45,6 @@ const RegisterForm = (): JSX.Element => {
           name="email"
           id="email"
           placeholder="Introduce your email"
-          value={email}
           onChange={handleEmailChange}
           required
         ></input>
@@ -61,7 +60,6 @@ const RegisterForm = (): JSX.Element => {
           name="password"
           id="password"
           placeholder="Introduce your password"
-          value={password} // need?
           onChange={handlePasswordChange}
           required
         ></input>
@@ -79,7 +77,7 @@ const RegisterForm = (): JSX.Element => {
           onChange={handleImageChange}
         ></input>
 
-        <Button text="Sign up" />
+        <Button text="Sign up" disabled={!email || !password || !image} />
       </form>
     </RegisterFormStyled>
   );
