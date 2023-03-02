@@ -1,7 +1,30 @@
+import { useState } from "react";
 import Button from "../Button/Button";
 import RegisterFormStyled from "./RegisterFormStyled";
 
 const RegisterForm = (): JSX.Element => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [, setImage] = useState<File>();
+
+  const handleEmailChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setEmail(event.target.value);
+  };
+
+  const handlePasswordChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setPassword(event.target.value);
+  };
+
+  const handleImageChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    if (event.target.files) {
+      setImage(event.target.files[0]);
+    }
+  };
+
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+  };
+
   return (
     <RegisterFormStyled>
       <form
@@ -9,6 +32,7 @@ const RegisterForm = (): JSX.Element => {
         className="form"
         autoComplete="off"
         encType="multipart/form"
+        onSubmit={handleSubmit}
       >
         <h2 className="form__heading">Register for the event</h2>
 
@@ -21,6 +45,8 @@ const RegisterForm = (): JSX.Element => {
           name="email"
           id="email"
           placeholder="Introduce your email"
+          value={email}
+          onChange={handleEmailChange}
           required
         ></input>
 
@@ -35,6 +61,8 @@ const RegisterForm = (): JSX.Element => {
           name="password"
           id="password"
           placeholder="Introduce your password"
+          value={password} // need?
+          onChange={handlePasswordChange}
           required
         ></input>
 
@@ -48,6 +76,7 @@ const RegisterForm = (): JSX.Element => {
           type="file"
           name="image"
           id="image"
+          onChange={handleImageChange}
         ></input>
 
         <Button text="Sign up" />
